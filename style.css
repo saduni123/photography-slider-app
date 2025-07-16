@@ -1,13 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Winky+Rough&display=swap');
 
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: 'Winky Rough', cursive;
   font-weight: normal;
   color: aliceblue;
   font-size: 14px;
   background-color: #111;
-  margin: 0;
-  padding: 0;
   background-size: cover;
   background-position: center;
 }
@@ -114,37 +119,57 @@ header a {
 .carousel .list .item .content .buttons button:hover {
   background-color: #eee;
 }
-.thumbbnali{
-    position: absolute;
-    bottom: 50px;
-    left: 50%;
-    width: max-content;
-    z-index: 100;
-    display: flex;
-    gap: 20px;
-}
-.thumbbnali .item{
-    width: 150px;
-    height: 220px;
-    flex-shrink: 0;
-    position: relative;
-}
-.thumbbnali.item img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.thumbbnali.item.content{
-    position: absolute;
-    bottom:10px;
-    left:10px;
-    right:10px;
 
+/* Thumbnail styles */
+.thumbbnali {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  z-index: 100;
+  display: flex;
+  gap: 20px;
 }
-.thumbbnali.item.content .title{
+
+.thumbbnali .item {
+  width: 150px;
+  height: 220px;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.thumbbnali .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.thumbbnali .item:hover img {
+  transform: scale(1.05);
+}
+
+.thumbbnali .item .content {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.thumbbnali .item .content .title {
   font-weight: bold;
+  font-size: 14px;
+  color: #fff;
 }
-.arrows{
+
+/* Arrows */
+.arrows {
   position: absolute;
   top: 80%;
   right: 52%;
@@ -153,11 +178,78 @@ header a {
   display: flex;
   gap: 10px;
   align-items: center;
+  justify-content: center;
 }
-.arrows button{
+
+.arrows button {
   width: 48px;
   height: 48px;
   border-radius: 50%;
   background-color: #eee4;
   border: none;
+  font-family: monospace;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: large;
+  transition: 0.5s;
+  z-index: 100;
+}
+
+.arrows button:hover {
+  background-color: #eee;
+  color: #555;
+}
+
+
+.carousel .list .item:nth-child(1) {
+  z-index: 2;
+}
+
+.carousel .list .item:nth-child(1) .author,
+.carousel .list .item:nth-child(1) .title,
+.carousel .list .item:nth-child(1) .topic,
+.carousel .list .item:nth-child(1) .buttons {
+  transform: translateY(50px);
+  filter: blur(20px);
+  opacity: 0;
+  animation: showContent 0.5s 1s ease-out forwards;
+}
+
+/* Animation */
+@keyframes showContent {
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+.carousel.list.item:nth-child(1).title{
+    animation-delay: 1.2s;
+}
+.carousel.list.item:nth-child(1).topic{
+    animation-delay: 1.4s;
+}
+.carousel.list.item:nth-child(1).des{
+    animation-delay: 1.6s;
+}
+.carousel.list.item:nth-child(1).buttons{
+    animation-delay: 1.8s;
+}
+.carousel.next.list.item:nth-child(1) img{
+  width: 150px;
+  height: 220px;
+  position:absolute;
+  left: 50%;
+  bottom: 50px;
+  border-radius: 20px;
+  animation: showImage 0.5s liner 1 forwards;
+}
+@keyframes showImage{
+  to{
+    width:100px;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    border-radius: 0;
+  }
 }
