@@ -2,51 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Photography Slider App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Meshi Photography</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  
-  <header>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Contacts</a>
-      <a href="#">Info</a>
-      <a href="#">Portfolio</a>
-      <a href="#">Packages</a>
-      <a href="#">Reviews</a>
-      <a href="#">Blog</a>
-      <a href="#">Login</a>
-      <a href="#">Others</a>
-    </nav>
+
+  <header class="hero">
+    <div class="overlay">
+      <h1>Meshi Photography</h1>
+      <p>Capturing Moments That Matter</p>
+    </div>
   </header>
 
-  <!-- Carousel -->
-  <div class="carousel next">
-    <div class="list">
-      <div class="item active">
-        <img src="" alt="Slide 1" />
-        <div class="content">
-          <div class="author">Meshi</div>
-          <div class="title">PHOTOGRAPHY SLIDER</div>
-          <div class="topic">LOCATION</div>
-          <div class="buttons">
-            <button>SEE MORE</button>
-            <button>SUBSCRIBE</button>
-          </div>
-        </div>
-      </div>
+  <section class="about">
+    <h2>About Me</h2>
+    <p>Hi! I'm Meshi, a passionate photographer specializing in weddings, portraits, and nature. My lens tells stories better than words.</p>
+  </section>
 
-      
-    <!-- Arrows -->
-    <div class="arrows">
-      <button id="prev">&#10094;</button>
-      <button id="next">&#10095;</button>
+  <section class="gallery">
+    <h2>Gallery</h2>
+    <div class="grid">
+      <img src="images/gallery1.jpg" alt="Gallery 1" />
+      <img src="images/gallery2.jpg" alt="Gallery 2" />
+      <img src="images/gallery3.jpg" alt="Gallery 3" />
     </div>
-  </div>
+  </section>
 
-  <!-- Script -->
-  <script src="app.js"></script>
+  <section class="services">
+    <h2>Services</h2>
+    <ul>
+      <li>💍 Wedding Photography</li>
+      <li>👶 Baby Shoots</li>
+      <li>🏞 Nature & Travel</li>
+    </ul>
+  </section>
+
+  <section class="contact">
+    <h2>Contact</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Email" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Meshi Photography. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
